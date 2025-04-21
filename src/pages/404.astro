@@ -1,0 +1,25 @@
+---
+import Hero from "../components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="No Encontrado"
+  description="Error 404 — esta recurso no existe"
+>
+  <section>
+    <Hero title="Página no encontrada" tagline="Este recurso no existe" />
+    <img src="/assets/logo.png" width="500" height="500" />
+  </section>
+</BaseLayout>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  img {
+    margin: 0 auto;
+  }
+</style>

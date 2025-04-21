@@ -1,0 +1,167 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout
+  title="Sobre Mí | Neithans Valdez"
+  description="Sobre Neithans Valdez"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="Sobre Mí"
+        tagline="Gracias por visitar mi portfolio. Lee a continuación para saber más sobre mí y mi trayectoria."
+      >
+        <img
+          width="1553"
+          height="873"
+          src="/assets/about-me.jpg"
+          alt="Jeanine White at work with a colleague"
+        />
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Trayectoria</h2>
+        <div class="content">
+          <p>
+            <p>
+              A lo largo de mi trayectoria profesional, he adquirido experiencia
+              diversificada en múltiples áreas de TI, destacando:
+            </p>
+            <br />
+            <li>
+              Soporte técnico integral: atención a usuarios en hardware,
+              software y resolución de incidencias.
+            </li>
+            <li>
+              Administración de redes: gestión avanzada de infraestructura Cisco
+              (switches, routers, enlaces) y configuración de servicios (DNS,
+              DHCP).
+            </li>
+            <li>
+              Virtualización y servidores: despliegue y mantenimiento de
+              entornos Proxmox, administración de servidores y servicios web.
+            </li>
+            <li>
+              Desarrollo de aplicaciones: creación de soluciones a medida para
+              sectores educativo y empresarial, enfocadas en eficiencia y
+              usabilidad.
+            </li>
+            <br />
+            <p>
+              Mi enfoque combina habilidades técnicas con adaptabilidad para
+              abordar desafíos complejos en entornos dinámicos.
+            </p>
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Educación</h2>
+        <div class="content">
+          <p>
+            Universidad Bolivariana de Venezuela - Licenciatura en Informática
+            (Finalizado).
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Habilidades</h2>
+        <div class="content">
+          <p>
+            <p>✅Desarrollo de Aplicaciones Web:</p>
+            <li>
+              Creación de soluciones personalizadas para entornos educativos y
+              empresariales.
+            </li>
+            <li>
+              Experiencia en frontend y backend (HTML, CSS, JavaScript, PHP,
+              Laravel, VueJS, Tailwind, MySQL, PostgreSQL).
+            </li>
+            <br />
+            <p>✅ Soporte Técnico a Usuarios:</p>
+            <li>
+              Asistencia en hardware, software y resolución de incidencias.
+            </li>
+            <li>
+              Capacidad para explicar conceptos técnicos de forma clara y
+              accesible.
+            </li>
+            <br />
+            <p>✅ Administración de Redes y Servicios:</p>
+            <li>
+              Configuración y mantenimiento de redes Cisco (switches, routers,
+              enlaces).
+            </li>
+            <li>
+              Gestión de servidores virtualizados (Proxmox), DNS, DHCP y
+              servicios web.
+            </li>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+
+  <style>
+    .about {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    img {
+      margin-top: 1.5rem;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: var(--gray-200);
+    }
+
+    .section-title {
+      grid-column-start: 1;
+      font-size: var(--text-xl);
+      color: var(--gray-0);
+    }
+
+    .content {
+      grid-column: 2 / 4;
+    }
+
+    .content :global(a) {
+      text-decoration: 1px solid underline transparent;
+      text-underline-offset: 0.25em;
+      transition: text-decoration-color var(--theme-transition);
+    }
+
+    .content :global(a:hover),
+    .content :global(a:focus) {
+      text-decoration-color: currentColor;
+    }
+
+    @media (min-width: 50em) {
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 60% 1fr;
+      }
+
+      .about > :global(:first-child) {
+        grid-column-start: 2;
+      }
+
+      section {
+        display: contents;
+        font-size: var(--text-lg);
+      }
+    }
+  </style>
+</BaseLayout>
